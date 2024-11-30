@@ -1,7 +1,5 @@
 package com.myapp01.learnerapp001
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
