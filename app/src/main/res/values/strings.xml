@@ -3,4 +3,21 @@
     <string name="header">Jetpack Compose tutorial</string>
     <string name="first_pg">Jetpack Compose is a modern toolkit for building native Android UI. Compose simplifies and accelerates UI development on Android with less code, powerful tools, and intuitive Kotlin APIs.</string>
     <string name="second_pg">In this tutorial, you build a simple UI component with declarative functions. You call Compose functions to say what elements you want and the Compose compiler does the rest. Compose is built around Composable functions. These functions let you define your app\\\'s UI programmatically because they let you describe how it should look and provide data dependencies, rather than focus on the process of the UI\\\'s construction, such as initializing an element and then attaching it to a parent. To create a Composable function, you add the @Composable annotation to the function name.</string>
+    <string name="title_activity_main2">TaskCompletedPage</string>
+    <string name="title_activity_composable_display">ComposableDisplay</string>
+    <string name="task_done">All tasks completed</string>
+    <string name="footer02">Nice work!</string>
+    <string name="text_composable">Text composable</string>
+    <string name="image_composable">Image composable</string>
+    <string name="row_composable">Row composable</string>
+    <string name="column_composable">Column composable</string>
+    <string name="text_disc">Displays text and follows the recommended Material Design guidelines.</string>
+    <string name="image_disc">Creates a composable that lays out and draws a given Painter class object.</string>
+    <string name="row_disc">A layout composable that places its children in a horizontal sequence.</string>
+    <string name="column_disc">A layout composable that places its children in a vertical sequence.</string>
+    <string name="title_activity_business_card">BusinessCard</string>
+    <string name="name">Jennifer Doe</string>
+    <string name="phone">+11 (123) 444 555 666</string>
+    <string name="androiddev">\@AndroidDev</string>
+    <string name="email">email@domail.com</string>
 </resources>
