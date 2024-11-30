@@ -5,18 +5,27 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.MarqueeAnimationMode
 import androidx.compose.foundation.background
+import androidx.compose.foundation.basicMarquee
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.twotone.Email
+import androidx.compose.material.icons.twotone.Phone
+import androidx.compose.material.icons.twotone.Share
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -28,6 +37,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -51,66 +61,86 @@ class BusinessCard : ComponentActivity() {
 
 @Composable
 fun BusinessCard(modifier: Modifier = Modifier) {
-    val image01= painterResource(R.drawable.android_logo)
-    Column(modifier = modifier
-        .fillMaxHeight(0.5f)
-        .fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
+    val image01 = painterResource(R.drawable.android_logo)
+    Column(
+        verticalArrangement = Arrangement.SpaceBetween,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(painter = image01,
-            contentDescription = "image_android",
-            modifier=modifier
-                .clip(RectangleShape)
-                .padding(start = 150.dp, top = 150.dp, end = 150.dp)
-                .background(color = Color.Black)
-        )
+        Column(
+            modifier = modifier.fillMaxHeight(0.5f),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
+        ) {
+            Image(
+                painter = image01,
+                contentDescription = "image_android",
+                modifier = modifier
+                    .clip(CircleShape)
+                    .size(100.dp)
+                    .background(color = Color.Black)
+            )
 
-        Text(text = stringResource(R.string.name),
-            fontSize = 30.sp,
-            modifier = modifier.padding(top = 8.dp)
-        )
+            Spacer(modifier = modifier.padding(4.dp))
 
-        Text(text = stringResource(R.string.name)
-        )
-    }
-
-    Column(modifier = modifier
-        .fillMaxSize()
-        .padding(bottom = 30.dp),
-        verticalArrangement = Arrangement.Bottom,
-        horizontalAlignment = Alignment.Start,
-    ) {
-        Row(verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center,
-            modifier = modifier.fillMaxWidth()) {
-            Icon(Icons.Filled.Phone, contentDescription = "Phone")
             Text(
-                text = stringResource(R.string.phone),
-                fontSize = 12.sp,
-                modifier = modifier.padding(8.dp)
+                text = stringResource(R.string.name),
+                fontWeight = FontWeight.ExtraBold,
+                fontSize = 30.sp
+            )
+
+            Spacer(modifier = modifier.padding(4.dp))
+
+            Text(
+                text = stringResource(R.string.title), fontWeight = FontWeight.Bold
             )
         }
-        Row(verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center,
-            modifier = modifier.fillMaxWidth()) {
 
-            Icon(Icons.Filled.Share, contentDescription = "Share")
-            Text(
-                text = stringResource(R.string.androiddev),
-                fontSize = 16.sp,
-                modifier = modifier.padding(8.dp)
-            )
-        }
-        Row(verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center,
-            modifier = modifier.fillMaxWidth()) {
-            Icon(Icons.Filled.Email, contentDescription = "Email")
-            Text(
-                text = stringResource(R.string.email),
-                fontSize = 16.sp,
-                modifier = modifier.padding(8.dp)
-            )
+
+        Column(
+            modifier = modifier
+                .fillMaxWidth()
+                .fillMaxHeight()
+                .padding(bottom = 50.dp),
+            verticalArrangement = Arrangement.Bottom,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    Icons.TwoTone.Phone, contentDescription = "Phone", tint = Color.Blue
+                )
+                Text(
+                    text = stringResource(R.string.phone),
+                    fontSize = 12.sp,
+                    modifier = modifier.padding(8.dp)
+                )
+            }
+
+            Spacer(modifier = modifier.padding(4.dp))
+
+            Row(verticalAlignment = Alignment.CenterVertically) {
+
+                Icon(
+                    Icons.TwoTone.Share, contentDescription = "Share", tint = Color.Magenta
+                )
+                Text(
+                    text = stringResource(R.string.androiddev),
+                    fontSize = 12.sp,
+                    modifier = modifier.padding(8.dp)
+                )
+            }
+
+            Spacer(modifier = modifier.padding(4.dp))
+
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(
+                    Icons.TwoTone.Email, contentDescription = "Email", tint = Color.DarkGray
+                )
+                Text(
+                    text = stringResource(R.string.email),
+                    fontSize = 12.sp,
+                    modifier = modifier.padding(8.dp)
+                )
+            }
         }
     }
 }
