@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -31,7 +30,6 @@ class MainActivity : ComponentActivity() {
             LearnerApp001Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     LearnerAppMain(
-                        name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -41,7 +39,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun LearnerAppMain(name: String, modifier: Modifier = Modifier) {
+fun LearnerAppMain(modifier: Modifier = Modifier) {
     val bg_image = painterResource(R.drawable.bg_compose_background)
 
     Column {
@@ -75,6 +73,6 @@ fun LearnerAppMain(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     LearnerApp001Theme {
-        LearnerAppMain("Android")
+        LearnerAppMain(modifier = Modifier.padding())
     }
 }
